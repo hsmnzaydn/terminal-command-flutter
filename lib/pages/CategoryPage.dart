@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:terminal_commands_flutter/components/CardWidget.dart';
+import 'package:terminal_commands_flutter/components/DialogWidget.dart';
 import 'package:terminal_commands_flutter/components/Style.dart';
 import 'package:terminal_commands_flutter/model/Category.dart';
 import 'package:terminal_commands_flutter/pages/CategoryDetailPage.dart';
@@ -15,6 +16,9 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
   Future<List<Category>> category;
+
+  TextEditingController _titleController = new TextEditingController();
+  TextEditingController _descriptionController = new TextEditingController();
 
   @override
   void initState() {
@@ -39,6 +43,44 @@ class _CategoryPageState extends State<CategoryPage> {
         title: Text("Kategoriler"),
       ),
       body: _ListViewWidget(category),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: primaryDarkColor),
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/images/logo.png",
+                    width: 100,
+                    height: 100,
+                  ),
+                  Text(
+                    "Terminal Komutları",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 16),
+                  )
+                ],
+              ),
+            ),
+            ListTile(
+                leading: Icon(Icons.save),
+                title: Text("Komutlarım"),
+                onTap: () {
+                  print(_titleController.text);
+                })
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          addCommandDialog(context, _titleController, _descriptionController);
+        },
+        backgroundColor: primaryDarkColor,
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

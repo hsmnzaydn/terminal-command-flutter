@@ -25,25 +25,26 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
 
   @override
   void initState() {
-   commandList = getCommandOfCategory(category.sId);
+    commandList = getCommandOfCategory(category.sId);
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryDarkColor,
       appBar: AppBar(
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search, color: Colors.white),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings, color: Colors.white),
-            )
-          ],
-          title: Text(category.title),
-        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search, color: Colors.white),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.settings, color: Colors.white),
+          )
+        ],
+        title: Text(category.title),
+      ),
       body: _ListViewWidget(commandList),
     );
   }
@@ -79,8 +80,9 @@ Widget _commandListView(Future commandList, BuildContext context) {
                 itemBuilder: (_, int index) {
                   return new GestureDetector(
                     //You need to make my child interactive
-                    onTap: () =>{
-                      confirmDialog(context, data[index].title, data[index].description)
+                    onTap: () => {
+                      confirmDialog(
+                          context, data[index].title, data[index].description)
                     },
                     child: commandCardView(data[index]),
                   );
