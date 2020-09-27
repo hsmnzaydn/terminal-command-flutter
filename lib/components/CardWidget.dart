@@ -11,18 +11,14 @@ Widget categoryCardView(Category category) {
         child: Row(
           children: [
             Container(
-                margin: EdgeInsets.all(16.0),
-                child: Image(
-                  image: NetworkImage(category.iconPath),
-                  height: 70.0,
-                  width: 100.0,
-                )),
-            Text(
-              category.title,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 16),
+              padding: EdgeInsets.all(16),
+              child: Text(
+                category.title,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 16),
+              ),
             )
           ],
         )),
@@ -45,8 +41,10 @@ Widget commandCardView(Command command) {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text(command.description,
-                  style: TextStyle(color: Colors.white, fontSize: 12))
+              children: [
+                Flexible(
+                    child: Text(command.description,
+                        style: TextStyle(color: Colors.white, fontSize: 12)))
               ],
             ),
           ],

@@ -26,11 +26,10 @@ void confirmDialog(BuildContext context, String title, String description) {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                        padding: EdgeInsets.all(16),
-                        child: Text(description,
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 12))),
+                    Flexible(
+                      child: Text(description,
+                          style: TextStyle(color: Colors.white, fontSize: 12)),
+                    )
                   ],
                 ),
               ],

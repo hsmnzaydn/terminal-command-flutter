@@ -40,47 +40,9 @@ class _CategoryPageState extends State<CategoryPage> {
             icon: Icon(Icons.settings, color: Colors.white),
           )
         ],
-        title: Text("Kategoriler"),
+        title: Text("Categories"),
       ),
       body: _ListViewWidget(category),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: primaryDarkColor),
-              child: Column(
-                children: [
-                  Image.asset(
-                    "assets/images/logo.png",
-                    width: 100,
-                    height: 100,
-                  ),
-                  Text(
-                    "Terminal Komutları",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16),
-                  )
-                ],
-              ),
-            ),
-            ListTile(
-                leading: Icon(Icons.save),
-                title: Text("Komutlarım"),
-                onTap: () {
-                  print(_titleController.text);
-                })
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          addCommandDialog(context, _titleController, _descriptionController);
-        },
-        backgroundColor: primaryDarkColor,
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
