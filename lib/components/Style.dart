@@ -5,11 +5,11 @@ const primaryColor = Color(0xFF282931);
 const primaryDarkColor = Color(0xFF171720);
 const accnetColor = Color(0xFF0000);
 
-Widget createTextField(String label, TextEditingController controller) {
+Widget createTextField(String label, Function(String) onChanged) {
   return Container(
       margin: EdgeInsets.all(16),
       child: TextField(
-          controller: controller,
+          onChanged: (text) => {onChanged(text)},
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(

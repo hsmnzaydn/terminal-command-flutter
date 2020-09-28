@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:terminal_commands_flutter/components/CardWidget.dart';
-import 'package:terminal_commands_flutter/components/DialogWidget.dart';
 import 'package:terminal_commands_flutter/components/Style.dart';
 import 'package:terminal_commands_flutter/model/Category.dart';
 import 'package:terminal_commands_flutter/pages/CategoryDetailPage.dart';
+import 'package:terminal_commands_flutter/pages/SearchPage.dart';
 import 'package:terminal_commands_flutter/services/CategoryServices.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -16,9 +16,6 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
   Future<List<Category>> category;
-
-  TextEditingController _titleController = new TextEditingController();
-  TextEditingController _descriptionController = new TextEditingController();
 
   @override
   void initState() {
@@ -34,6 +31,10 @@ class _CategoryPageState extends State<CategoryPage> {
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: Colors.white),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SearchPage()));
+            },
           ),
           IconButton(
             onPressed: () {},
