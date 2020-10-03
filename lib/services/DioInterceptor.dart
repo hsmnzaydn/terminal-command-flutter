@@ -9,7 +9,7 @@ class DioInterceptor extends Interceptor {
     var path = options.baseUrl;
     options.baseUrl = _endpoint + path;
     options.headers["app-language"] = 'ENG';
-    print("--> ${options.method} ${options.path}");
+    print("--> ${options.method} ${options.baseUrl}${options.path}");
     print("Content type: ${options.contentType}");
     print("<-- END HTTP");
     return super.onRequest(options);

@@ -26,6 +26,7 @@ dependencies:
     
   dio: ^3.0.10
   rxdart: ^0.23.1
+  get:
 
 
   # The following adds the Cupertino Icons font to your application.

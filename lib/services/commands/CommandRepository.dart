@@ -1,11 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:terminal_commands_flutter/model/Category.dart';
 import 'package:terminal_commands_flutter/model/Command.dart';
 import 'package:terminal_commands_flutter/services/commands/CommandApiProvider.dart';
 
 class CommandRepository {
-  CommandApiProvider _apiProvider = CommandApiProvider();
+  final CommandApiProvider apiProvider;
 
-  Future<List<Command>> getCommandsOfQuery(String query) {
-    return _apiProvider.getCommandsOfQuery(query);
+  CommandRepository({@required this.apiProvider})
+      : assert(apiProvider != null);
+
+   getCommandsOfQuery(String query) {
+    return apiProvider.getCommandsOfQuery(query);
   }
 }

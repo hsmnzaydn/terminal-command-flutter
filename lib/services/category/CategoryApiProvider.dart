@@ -6,14 +6,24 @@ import '../DioClient.dart';
 class CategoryApiProvider {
   Dio _dio = DioClient.getDioClient();
 
-  Future<List<Category>> getCategories() async {
-    Response response = await _dio.get("categories");
-    return (response.data as List).map((x) => Category.fromJson(x)).toList();
+
+  getCategories() async {
+    try {
+      var response = await _dio.get("categories");
+      if (response.statusCode == 200) {
+        return (response.data as List)
+            .map((model) => Category.fromJson(model))
+            .toList();
+      } else
+        print('erro');
+    } catch (_) {}
   }
 
-  Future<List<Command>> getCommandsOfCategory(String categoryId) async {
-    Response response =
-        await _dio.get("categories/" + categoryId + "/commands");
+
+
+   getCommandsOfCategory(String categoryId) async {
+    var response =
+    await _dio.get("categories/" + categoryId + "/commands");
     return (response.data as List).map((x) => Command.fromJson(x)).toList();
   }
 }
