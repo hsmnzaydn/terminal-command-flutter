@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:terminal_commands_flutter/model/Category.dart';
-import 'package:terminal_commands_flutter/model/Command.dart';
-import '../DioClient.dart';
+import 'package:terminal_commands_flutter/model/category.dart';
+import 'package:terminal_commands_flutter/model/command.dart';
+import '../dio_client.dart';
 
 class CategoryApiProvider {
   Dio _dio = DioClient.getDioClient();

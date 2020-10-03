@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:terminal_commands_flutter/components/Style.dart';
-import 'package:terminal_commands_flutter/pages/categories/CategoryPage.dart';
+import 'package:terminal_commands_flutter/pages/categories/category_page.dart';
 
 import 'bindings/categories_binding.dart';
 

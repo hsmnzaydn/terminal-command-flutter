@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:terminal_commands_flutter/services/DioInterceptor.dart';
+import 'package:terminal_commands_flutter/services/dio_interceptor.dart';
 
 class DioClient {
   static Dio getDioClient() {

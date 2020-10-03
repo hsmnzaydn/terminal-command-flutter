@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:terminal_commands_flutter/model/Category.dart';
-import 'package:terminal_commands_flutter/model/Command.dart';
+import 'package:terminal_commands_flutter/model/category.dart';
+import 'package:terminal_commands_flutter/model/command.dart';
 import 'package:terminal_commands_flutter/components/Style.dart';
 
 Widget categoryCardView(Category category) {

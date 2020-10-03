@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:terminal_commands_flutter/bindings/categories_binding.dart';
 import 'package:terminal_commands_flutter/bindings/search_binding.dart';
-import 'package:terminal_commands_flutter/components/CardWidget.dart';
+import 'package:terminal_commands_flutter/components/card_widget.dart';
 import 'package:terminal_commands_flutter/components/Style.dart';
-import 'package:terminal_commands_flutter/pages/search/SearchPage.dart';
-import 'package:terminal_commands_flutter/pages/categories/CategoryController.dart';
-import 'package:terminal_commands_flutter/pages/category_detail/CategoryDetailPage.dart';
+import 'package:terminal_commands_flutter/components/loading_widget.dart';
+import 'package:terminal_commands_flutter/pages/search/search_page.dart';
+import 'package:terminal_commands_flutter/pages/categories/category_controller.dart';
+import 'package:terminal_commands_flutter/pages/category_detail/category_detail_page.dart';
 
 class CategoryPage extends GetView<CategoryController> {
 
@@ -22,10 +24,6 @@ class CategoryPage extends GetView<CategoryController> {
             onPressed: () {
               Get.to(SearchPage(),binding: SearchBinding());
             },
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.settings, color: Colors.white),
           )
         ],
         title: Text("Categories"),
@@ -36,12 +34,14 @@ class CategoryPage extends GetView<CategoryController> {
               Get.find<CategoryController>().getCategoryList();
             },
             builder: (_) {
-              return ListView.builder(
+              return _.categoryList.length < 1
+                  ?LoadingWidget()
+                  :
+               ListView.builder(
                   itemBuilder: (context, index) {
                     return new GestureDetector(
-                      //You need to make my child interactive
                       onTap: () => {
-                            Get.to(CategoryDetailPage(_.categoryList[index]))
+                            Get.to(CategoryDetailPage(_.categoryList[index]),binding: CategoriesBinding())
                       },
                       child: categoryCardView(_.categoryList[index]),
                     );

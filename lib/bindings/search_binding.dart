@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:terminal_commands_flutter/pages/search/SearchController.dart';
-import 'package:terminal_commands_flutter/services/commands/CommandApiProvider.dart';
-import 'package:terminal_commands_flutter/services/commands/CommandRepository.dart';
+import 'package:terminal_commands_flutter/pages/search/search_controller.dart';
+import 'package:terminal_commands_flutter/services/commands/command_api_provider.dart';
+import 'package:terminal_commands_flutter/services/commands/command_repository.dart';
 
 class SearchBinding implements Bindings {
 

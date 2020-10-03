@@ -1,9 +1,9 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:terminal_commands_flutter/model/Category.dart';
-import 'package:terminal_commands_flutter/model/Command.dart';
-import 'package:terminal_commands_flutter/services/category/CategoryRepository.dart';
+import 'package:terminal_commands_flutter/model/category.dart';
+import 'package:terminal_commands_flutter/model/command.dart';
+import 'package:terminal_commands_flutter/services/category/category_repository.dart';
 
 class CategoryDetailController extends GetxController {
 

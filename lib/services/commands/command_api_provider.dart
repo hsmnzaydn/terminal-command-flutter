@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:terminal_commands_flutter/model/Command.dart';
-import '../DioClient.dart';
+import 'package:terminal_commands_flutter/model/command.dart';
+import '../dio_client.dart';
 
 class CommandApiProvider {
   Dio _dio = DioClient.getDioClient();

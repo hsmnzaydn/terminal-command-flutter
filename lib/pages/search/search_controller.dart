@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:terminal_commands_flutter/model/Command.dart';
-import 'package:terminal_commands_flutter/services/commands/CommandRepository.dart';
+import 'package:terminal_commands_flutter/model/command.dart';
+import 'package:terminal_commands_flutter/services/commands/command_repository.dart';
 
 class SearchController extends GetxController{
   final CommandRepository repository;
@@ -13,11 +13,14 @@ class SearchController extends GetxController{
   get commandList => this._commandList.value;
   set commandList(value) => this._commandList.value = value;
 
-  var query = "".obs;
 
   getCommandsOfQuery(String query){
     repository.getCommandsOfQuery(query).then((data) {
       this.commandList = data;
     });
+  }
+
+  deleteList() {
+    this.commandList = [];
   }
 }

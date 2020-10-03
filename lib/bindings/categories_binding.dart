@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:terminal_commands_flutter/pages/categories/CategoryController.dart';
-import 'package:terminal_commands_flutter/pages/category_detail/CategoryDetailController.dart';
-import 'package:terminal_commands_flutter/services/category/CategoryApiProvider.dart';
-import 'package:terminal_commands_flutter/services/category/CategoryRepository.dart';
+import 'package:terminal_commands_flutter/pages/categories/category_controller.dart';
+import 'package:terminal_commands_flutter/pages/category_detail/category_detail_controller.dart';
+import 'package:terminal_commands_flutter/services/category/category_api_provider.dart';
+import 'package:terminal_commands_flutter/services/category/category_repository.dart';
 
 class CategoriesBinding implements Bindings {
 
